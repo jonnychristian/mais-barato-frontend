@@ -30,31 +30,28 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onNavigate })
 
   return (
     <Card 
-      className="flex flex-col overflow-hidden transition-all hover:shadow-lg cursor-pointer" 
+      className="overflow-hidden transition-all hover:shadow-lg cursor-pointer" 
       onClick={handleClick}
     >
-        <div className="w-full aspect-[4/3] overflow-hidden">
-          <img
-            src={product.image || "https://placehold.co/300x300?text=Produto"}
-            alt={product.name}
-            loading="lazy"
-            className="w-full h-full object-contain transition-transform"
-          />
+      <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden">
+        <img
+          src={product.image || "https://placehold.co/300x300?text=Produto"}
+          alt={product.name}
+          className="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105"
+        />
+      </div>
+      <CardHeader className="p-3 sm:p-4">
+        <div className="space-y-1">
+          <CardTitle className="text-sm sm:text-xl line-clamp-2">{product.name}</CardTitle>
+          <p className="text-xs sm:text-sm text-muted-foreground">{product.category}</p>
         </div>
-      <CardHeader className="p-4">
-        <div className="flex items-start justify-between">
-          <CardTitle className="text-xl line-clamp-2">{product.name}</CardTitle>
-          <Badge variant="outline" className="ml-2 text-xs">
-            {product.category}
-          </Badge>
-        </div>
-        <CardDescription className="line-clamp-2 text-sm text-muted-foreground">
+        <CardDescription className="line-clamp-2 text-xs sm:text-sm text-muted-foreground">
           {product.description}
         </CardDescription>
       </CardHeader>
-      <CardContent className="p-4 pt-0">
-        <h3 className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">Melhores preços:</h3>
-        <div className="space-y-3">
+      <CardContent className="p-3 sm:p-4 pt-0">
+        <h3 className="mb-2 text-xs sm:text-sm font-medium">Melhores preços:</h3>
+        <div className="space-y-2 sm:space-y-3">
           {top3Prices.map((price) => (
             <div
               key={price.supermarketId}
@@ -65,18 +62,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onNavigate })
               }`}
             >
               <div className="flex items-center">
-                <span className="text-sm font-medium">{price.supermarketName}</span>
+                <span className="text-xs sm:text-sm font-medium">{price.supermarketName}</span>
               </div>
               <div className="flex items-center">
                 <span
-                  className={`text-base font-bold ${
+                  className={`text-sm sm:text-base font-bold ${
                     price.isLowestPrice ? "text-green-600 dark:text-green-400" : ""
                   }`}
                 >
                   R$ {price.price.toFixed(2)}
                 </span>
                 {price.isLowestPrice && (
-                  <Badge variant="success" className="ml-2 bg-green-500 text-xs">
+                  <Badge variant="success" className="ml-1 sm:ml-2 bg-green-500 text-xs">
                     Menor preço
                   </Badge>
                 )}
