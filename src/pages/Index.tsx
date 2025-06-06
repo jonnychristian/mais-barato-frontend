@@ -244,7 +244,7 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row sm:items-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Link 
               to="/" 
-              className="text-2xl font-bold hover:opacity-80 transition-opacity flex-shrink-0 text-center sm:text-left"
+              className="text-3xl sm:text-2xl font-bold hover:opacity-80 transition-opacity flex-shrink-0 text-center sm:text-left"
             >
               Mais Barato
             </Link>
@@ -301,7 +301,7 @@ const Index = () => {
               : "Produtos populares"}
           </h2>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid gap-6 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {isLoading ? (
               <ProductSkeletons />
             ) : error ? (
