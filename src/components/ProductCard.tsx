@@ -72,11 +72,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onNavigate })
                 >
                   R$ {price.price.toFixed(2)}
                 </span>
-                {price.isLowestPrice && (
-                  <Badge variant="success" className="ml-1 sm:ml-2 bg-green-500 text-xs">
-                    Menor preço
-                  </Badge>
-                )}
               </div>
             </div>
           ))}
