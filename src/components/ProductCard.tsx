@@ -33,11 +33,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onNavigate })
       className="overflow-hidden transition-all hover:shadow-lg cursor-pointer" 
       onClick={handleClick}
     >
-      <div className="aspect-square w-full overflow-hidden">
+      <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden">
         <img
           src={product.image || "https://placehold.co/300x300?text=Produto"}
           alt={product.name}
-          className="h-full w-full object-cover transition-transform hover:scale-105"
+          className="absolute inset-0 w-full h-full object-cover transition-transform hover:scale-105"
         />
       </div>
       <CardHeader className="p-4">
