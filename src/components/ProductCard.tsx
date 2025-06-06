@@ -30,7 +30,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onNavigate })
 
   return (
     <Card 
-      className="overflow-hidden transition-all hover:shadow-lg cursor-pointer" 
+      className="flex flex-col overflow-hidden transition-all hover:shadow-lg cursor-pointer" 
       onClick={handleClick}
     >
         <div className="w-full aspect-[4/3] overflow-hidden">
@@ -38,7 +38,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onNavigate })
             src={product.image || "https://placehold.co/300x300?text=Produto"}
             alt={product.name}
             loading="lazy"
-            className="w-full h-full object-cover transition-transform hover:scale-105"
+            className="w-full h-full object-contain transition-transform"
           />
         </div>
       <CardHeader className="p-4">
@@ -53,7 +53,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onNavigate })
         </CardDescription>
       </CardHeader>
       <CardContent className="p-4 pt-0">
-        <h3 className="mb-2 text-sm font-medium">Melhores preços:</h3>
+        <h3 className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">Melhores preços:</h3>
         <div className="space-y-3">
           {top3Prices.map((price) => (
             <div
