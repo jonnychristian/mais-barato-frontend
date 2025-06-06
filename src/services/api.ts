@@ -2,7 +2,7 @@
 import { Product } from "@/types/product";
 
 // Altere esta URL para o endereço da sua API
-const API_BASE = "https://mais-barato-backend.onrender.com"; // Base URL extraída para reutilização
+const API_BASE = "http://localhost:8080"; // Base URL extraída para reutilização
 
 export const fetchProducts = async (cursor = 0, limit = 10, searchTerm = ""): Promise<Product[]> => {
   try {

@@ -241,12 +241,12 @@ const Index = () => {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900" ref={mainContainerRef}>
       <div className="sticky top-0 z-10 bg-gray-50 dark:bg-gray-900 py-4 px-4 shadow-md">
         <div className="container mx-auto">
-          <div className="flex items-center space-x-4">
+          <div className="flex flex-col sm:flex-row sm:items-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Link 
               to="/" 
-              className="text-2xl font-bold hover:opacity-80 transition-opacity flex-shrink-0"
+              className="text-2xl font-bold hover:opacity-80 transition-opacity flex-shrink-0 text-center sm:text-left"
             >
-              EconomiaMarket
+              Mais Barato
             </Link>
             <div className="flex-grow">
               <div className="relative mx-auto max-w-2xl">
